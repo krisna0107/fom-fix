@@ -13,7 +13,7 @@ class MejaSeader extends Seeder
     public function run()
     {
         for($i=1; $i<=5; $i++){
-            Konten::insert([
+            Meja::insert([
                 'meja' => "meja $i",
             ]);
         }
