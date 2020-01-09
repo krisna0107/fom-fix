@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Meja;
 
-class MejaSeader extends Seeder
+class MejaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
