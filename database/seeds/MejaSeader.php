@@ -14,7 +14,7 @@ class MejaSeader extends Seeder
     {
         for($i=1; $i<=5; $i++){
             Meja::insert([
-                'meja' => "meja $i",
+                'meja' => "meja ".$i
             ]);
         }
     }
