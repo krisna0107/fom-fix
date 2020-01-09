@@ -31,10 +31,11 @@ class PesanController extends Controller
             return "B-".$datenow."-00001";
     }
 
-    public function tambah(request $request, $userid){
+    public function tambah(request $request, $userid, $meja){
         $pesan = new Pesan;
         $pesan->kd_book = $this->getKodeBook();
         $pesan->user_id = $userid;
+        $pesan->meja_id = $meja;
         $pesan->status = 'P';
         $pesan->save();
 

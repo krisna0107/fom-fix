@@ -34,7 +34,7 @@ Route::group(['prefix' => 'akuns'], function(){
 Route::group(['prefix' => 'pesans'], function(){
     Route::get('/kode', 'PesanController@getKodeBook');
     Route::get('/{userid}/user/{stat}/status/{limit}/limit', 'PesanController@getPesanByKdBookAndStatus');
-    Route::post('/{userid}/user', 'PesanController@tambah');
+    Route::post('/{userid}/user/{meja}/meja', 'PesanController@tambah');
     Route::post('/{kdbook}/booking/{userid}/user/{total}/set/{bank}/bank/{va}/va/{status}', 'PesanController@setTotal');
 });
 
@@ -43,7 +43,7 @@ Route::group(['prefix' => 'carts'], function(){
     Route::get('/{kdbook}/booking/{userid}/user/total', 'CartController@getTotal');
     Route::get('/{kdbook}/booking/{userid}/user/{limit}/limit', 'CartController@getCartKontenByUserKdBook');
     Route::get('/{kdbook}/booking/{userid}/user/{kontenid}/konten', 'CartController@cekCart');
-    Route::post('/{kdbook}/booking/{userid}/user/{kontenid}/konten', 'CartController@tambah');
+    Route::post('/{kdbook}/booking/{userid}/user/{kontenid}/konten/{jumlah}/jumlah/{total}/total', 'CartController@tambah');
     Route::delete('/{kdbook}/booking/{userid}/user/{kontenid}/konten', 'CartController@hapus');
 });
 

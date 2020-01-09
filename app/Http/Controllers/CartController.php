@@ -50,13 +50,13 @@ class CartController extends Controller
             ], 200);
     }
 
-    public function tambah(request $request, $kdbook, $userid, $kontenid){
+    public function tambah($kdbook, $userid, $kontenid, $jumlah, $total){
         $cart = new Cart;
         $cart->kd_book = $kdbook;
         $cart->konten_id = $kontenid;
         $cart->user_id = $userid;
-        $cart->pinjam = $request->pinjam;
-        $cart->kembali = $request->kembali;
+        $cart->jumlah = $jumlah;
+        $cart->total = $total;
         $cart->save();
         
         return $cart;
