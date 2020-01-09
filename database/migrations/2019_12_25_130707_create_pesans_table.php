@@ -20,8 +20,10 @@ class CreatePesansTable extends Migration
             $table->enum('status', ['P', 'D']);
             $table->string('bank');
             $table->string('va');
+            $table->string('meja_id');
             $table->primary('kd_book');
             $table->foreign('user_id')->references('id')->on('akuns');
+            $table->foreign('meja_id')->references('id')->on('mejas');
             $table->timestamps();
         });
     }
