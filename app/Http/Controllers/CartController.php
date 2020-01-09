@@ -23,13 +23,15 @@ class CartController extends Controller
     public function getTotal($kdbook, $userid){
         $clause = [['kd_book', $kdbook], ['user_id', $userid], ['status', 'P']];
         $pesan = Pesan::select('kd_book')->where($clause);
-        $cart = Cart::select('konten_id')->wherein('kd_book', $pesan);
-        $konten = Konten::whereIn('id', $cart)->sum('harga');
-        $sum = (int)$konten+2000;
+        $cart = Cart::wherein('kd_book', $pesan)->sum('total');
+        $cartjum = Cart::wherein('kd_book', $pesan)->sum('jumlah');
+        // $konten = Konten::whereIn('id', $cart)->sum('harga');
+        $sum = (int)$cart+2000;
         return response()->json([
-            "subtotal" => $konten,
+            "subtotal" => $cart,
             "tax"=> 2000,
-            "total" => $sum
+            "total" => $sum,
+            "jumlah" => $cartjum
         ], 200);
     }
 
