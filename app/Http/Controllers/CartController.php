@@ -26,7 +26,7 @@ class CartController extends Controller
         $cart = Cart::wherein('kd_book', $pesan)->sum('total');
         $cartjum = Cart::wherein('kd_book', $pesan)->sum('jumlah');
         // $konten = Konten::whereIn('id', $cart)->sum('harga');
-        $sum = (int)$cart+2000;
+        $sum = (int)$cart+20;
         return response()->json([
             "subtotal" => $cart,
             "tax"=> 2000,
