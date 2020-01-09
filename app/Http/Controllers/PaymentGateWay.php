@@ -15,7 +15,7 @@ class PaymentGateWay extends Controller
     }
 
     public function seting(){
-        Config::$serverKey = 'TWlkLXNlcnZlci13dXRqaXRvMjJxZzZxTFNYMG1MMktlMkE6';
+        Config::$serverKey = 'U0ItTWlkLXNlcnZlci1sV3JtYzU5ZjkxNEFxOFY1X0gwVUlIcU46';
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
         Config::$isProduction = false;
         // Set sanitization on (default)
@@ -43,7 +43,7 @@ class PaymentGateWay extends Controller
         );
         $response = Curl::to($this->baseUrl().'/charge')
         ->withHeader('Accept: application/json')
-        ->withHeader('Authorization: Basic TWlkLXNlcnZlci13dXRqaXRvMjJxZzZxTFNYMG1MMktlMkE6')
+        ->withHeader('Authorization: Basic U0ItTWlkLXNlcnZlci1sV3JtYzU5ZjkxNEFxOFY1X0gwVUlIcU46')
         ->withHeader('Content-Type: application/json')
         ->withData( $data )
         ->asJson()
@@ -55,7 +55,7 @@ class PaymentGateWay extends Controller
     public function getStatus($kdbook){
         $response = Curl::to($this->baseUrl()."/".$kdbook.'/status')
         ->withHeader('Accept: application/json')
-        ->withHeader('Authorization: Basic TWlkLXNlcnZlci13dXRqaXRvMjJxZzZxTFNYMG1MMktlMkE6')
+        ->withHeader('Authorization: Basic U0ItTWlkLXNlcnZlci1sV3JtYzU5ZjkxNEFxOFY1X0gwVUlIcU46')
         ->withHeader('Content-Type: application/json')
         ->asJson()
         ->get();
