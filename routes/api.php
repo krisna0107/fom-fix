@@ -22,6 +22,10 @@ Route::group(['prefix' => 'kontens'], function(){
     Route::get('/{id}/konten', 'KontenController@getKonten');
 });
 
+Route::group(['prefix' => 'mejas'], function(){
+    Route::get('/{id}/meja', 'KontenController@index');
+});
+
 Route::group(['prefix' => 'akuns'], function(){
     Route::post('/{email}/email', 'AkunController@getAkun');
     Route::get('/{limit}/limit', 'AkunController@index');
