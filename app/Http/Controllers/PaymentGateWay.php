@@ -11,7 +11,7 @@ class PaymentGateWay extends Controller
 {
 
     private function baseUrl() {
-        return "https://api.midtrans.com/v2";//"https://api.sandbox.midtrans.com/v2";
+        return "https://api.sandbox.midtrans.com/v2";
     }
 
     public function seting(){
